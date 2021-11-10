@@ -22,12 +22,9 @@ inquirer.prompt([
 ])
 
 // writeFileSync as a promise
-const init = () => {
-    promptUser()
-    .then((answers) => fs.writeFileSync('index.html', generateHTML(answers)))
-    .then(() => console.log('data'))
-    .catch((err) => console.error(err));
-};
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+}
 
 init();
 
