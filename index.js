@@ -5,7 +5,12 @@ const fs = require("fs");
 // exports iquirer data to correct path
 const path = require("path");
 
+// first prompt is to add a manager
+
+
 // GIVEN a command-line application that accepts user input
+
+//**** PUT IN FUNCTION SO YOU CAN CALL MULTIPLE TIMES */
 inquirer.prompt([
     {
         type:"input",
@@ -16,10 +21,11 @@ inquirer.prompt([
         type: "list",
         name: "position",
         message: "what's the employee's position",
-        choices: ["manager","engineer","intern"],
+        choices: ["engineer","intern", "I'm done adding employees"],
     }
 
 ])
+//add .then
 
 // writeFileSync as a promise
 function writeToFile(fileName, data) {
