@@ -21,7 +21,7 @@ inquirer.prompt([
         type: "list",
         name: "position",
         message: "what's the employee's position",
-        choices: ["engineer","intern", "I'm done adding employees"],
+        choices: ["engineer","intern","manager", "I'm done adding employees"],
     }
 
 ])
