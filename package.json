@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AdrianaBroadnax/TeamProfileGenProject#readme",
   "dependencies": {
     "inquirer": "^8.2.0",
+    "jest": "^27.4.5",
     "save": "^2.4.0"
   }
 }
