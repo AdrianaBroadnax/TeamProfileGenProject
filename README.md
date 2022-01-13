@@ -8,9 +8,10 @@ The test folder helps test weather the server will select the right employee, en
 
 ## Importing servers
 
-I needed to import the express server, inquirer, jest, and save by using npm i to install the servers.
+I needed to import the express server, inquirer, jest, test, and save by using npm i to install the servers.
 
 ## lib
+
 
 
 ## test
