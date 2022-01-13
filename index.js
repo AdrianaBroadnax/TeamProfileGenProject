@@ -20,21 +20,94 @@ const Intern = require("./lib/Intern");
 
 const allEmployees = [];
 
+
 function addManager () {
     inquirer.prompt([
         {
             type: "input",
             name: "managerName",
             message: "What is the manager's name?"
+        },
+        {
+            type: "input",
+            name: "managerId",
+            message: "What is the manager's Id?"
+        },
+        {
+            type: "input",
+            name: "managerNumber",
+            message: "What is the manager's Office Number?"
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What is the manager's email?"
         }
     ]).then((answers) => {
-        const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNumber);
+        const manager = new Manager(answer.managerName, answer.managerId, answer.managerNumber, answer.managerEmail);
         allEmployees.push(manager);
         //call the next inquirer function
     })
-}
+};
 
+function addEngineer () {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the engineer's Id?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What is the engineer's github?"
+        }
+    ]).then((answers) => {
+        const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub);
+        allEmployees.push(engineer);
+        //call the next inquirer function
+    })
+};
+// function addIntern
 
+function addIntern () {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the intern's Id?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is the intern's email?"
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school does the intern attend"
+        }
+    ]).then((answers) => {
+        const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);
+        allEmployees.push(intern);
+        //call the next inquirer function
+    })
+};
 
 // writeFileSync as a promise
 function writeToFile(fileName, data) {
