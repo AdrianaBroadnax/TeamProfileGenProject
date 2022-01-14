@@ -90,7 +90,7 @@ function addManager () {
             name: "managerEmail",
             message: "What is the manager's email?"
         }
-    ]).then((answers) => {
+    ]).then((answer) => {
         const manager = new Manager(answer.managerName, answer.managerId, answer.managerNumber, answer.managerEmail);
         allEmployees.push(manager);
         //call the next inquirer function
@@ -119,7 +119,7 @@ function addEngineer () {
             name: "engineerGithub",
             message: "What is the engineer's github?"
         }
-    ]).then((answers) => {
+    ]).then((answer) => {
         const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub);
         allEmployees.push(engineer);
         //call the next inquirer function
@@ -149,7 +149,7 @@ function addIntern () {
             name: "internSchool",
             message: "What school does the intern attend"
         }
-    ]).then((answers) => {
+    ]).then((answer) => {
         const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);
         allEmployees.push(intern);
         //call the next inquirer function
