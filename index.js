@@ -20,6 +20,53 @@ const Intern = require("./lib/Intern");
 
 const allEmployees = [];
 
+directory();
+
+function directory() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "direction",
+            message: "who would you like to add",
+            choices: [
+                {
+                    name: "manager",
+                    value: "add_manager"
+                },
+                {
+                    name: "engineer",
+                    value: "add_engineer"
+                },
+                {
+                    name: "intern",
+                    value: "add_intern"
+                }
+
+            ]
+        }
+    ])
+        .then(answer => {
+            // console.log(answer);
+            switch (answer.direction) {
+                case "add_manager":
+                    addManager();
+                    break;
+                case "add_engineer":
+                    addEngineer();
+                    break;
+                //FINISH SWITCH CASE FUNCTIONS
+                case "add_intern":
+                    addIntern();
+                    break;
+                default:
+                    console.error("oops!")
+                    // quit();
+            }
+        })
+
+
+}
+
 
 function addManager () {
     inquirer.prompt([
@@ -115,12 +162,9 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-    inquirer.prompt(questions).then((data)=>{
+    inquirer.prompt(directory).then((data)=>{
         writeToFile('generate.js', generateHTML({...data}))
     })
 }
 
 init();
-
-
-
