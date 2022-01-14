@@ -5,7 +5,7 @@ const fs = require("fs");
 // exports iquirer data to correct path
 const path = require("path");
 // imports to HTML page
-const generateHTML = require("./dist/index.html")
+const generateHTML = require("./dist/generate.js")
 
 // first prompt is to add a manager
 const Manager = require("./lib/Manager");
@@ -116,7 +116,7 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((data)=>{
-        writeToFile('index.html', generateHTML({...data}))
+        writeToFile('generate.js', generateHTML({...data}))
     })
 }
 
