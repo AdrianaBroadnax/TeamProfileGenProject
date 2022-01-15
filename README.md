@@ -40,7 +40,11 @@ after the array of questions were filled out, it was suppose to generate an html
 
 ## Deployed Links
 
-
+https://adrianabroadnax.github.io/TeamProfileGenProject/
+https://github.com/AdrianaBroadnax/TeamProfileGenProject.git
 
 
 ## Walkthrough Video
+
+
+https://watch.screencastify.com/v/uhYaBasaHA2x8eNTW9Jb
