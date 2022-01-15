@@ -20,10 +20,10 @@ const Intern = require("./lib/Intern");
 
 const allEmployees = [];
 
-directory();
+// directory();
 
 function directory() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: "list",
             name: "direction",
@@ -162,7 +162,7 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-    inquirer.prompt(directory).then((data)=>{
+    directory().then((data)=>{
         writeToFile('generate.js', generateHTML({...data}))
     })
 }
